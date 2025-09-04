@@ -11,7 +11,7 @@ services:
       environment:
           ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
       volumes:
-        - ./:/mnt/data
+        - ./:/mnt
 
    datanode:
       image: hadoop-python3
@@ -19,7 +19,7 @@ services:
       env_file:
         - ./config
       volumes:
-        - ./:/mnt/data
+        - ./:/mnt
 
    resourcemanager:
       image: hadoop-python3
@@ -30,7 +30,7 @@ services:
       env_file:
         - ./config
       volumes:
-        - ./:/mnt/data
+        - ./:/mnt
 
    nodemanager:
       image: hadoop-python3
@@ -38,4 +38,4 @@ services:
       env_file:
         - ./config
       volumes:
-        - ./:/mnt/data
+        - ./:/mnt
